@@ -1,0 +1,24 @@
+FROM vmc-builder:latest
+
+COPY vmc/ /tmp/vmc/
+
+USER root
+
+WORKDIR /tmp/vmc/
+
+RUN apt-get update; \
+    apt-get install -y \
+                   curl \
+                   libssl-dev \
+                   python3-pip \
+                   python3-dev \
+                   build-essential; \
+    pip install --upgrade pip==22.0.3; \
+    pip install --upgrade setuptools==59.1.1; \
+    python3 setup.py build ;\
+    python3 setup.py install --force;
+
+WORKDIR /
+
+RUN vmc collectstatic --noinput --clear;
+ENTRYPOINT ["/opt/venv/bin/vmcctl"]

@@ -1,0 +1,34 @@
+version: '3.3'
+
+services:
+  admin:
+    image: vmc_dev:latest
+    command:
+      - start
+      - admin
+    volumes:
+      - ../../vmc/src/vmc:/opt/venv/lib/python3.7/site-packages/vmc
+      - ../../vmc-demo/config/vmc/:/test_data
+      - ../../vmc-demo/config/vmc/demo.yml:/etc/vmc/config.yml
+
+  worker:
+    image: vmc_dev:latest
+    command:
+      - start
+      - worker
+    volumes:
+      - ../../vmc/src/vmc:/opt/venv/lib/python3.7/site-packages/vmc
+      - ../../vmc-demo/config/vmc/demo.yml:/etc/vmc/config.yml
+
+  scheduler:
+    image: vmc_dev:latest
+    command:
+      - start
+      - scheduler
+    volumes:
+      - ../../vmc/src/vmc:/opt/venv/lib/python3.7/site-packages/vmc
+      - ../../vmc-demo/config/vmc/demo.yml:/etc/vmc/config.yml
+
+  postgres:
+    ports:
+    - "5432:5432"

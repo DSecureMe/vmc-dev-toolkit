@@ -1,0 +1,9 @@
+[submodule "vmc"]
+	path = vmc
+	url = git@github.com:DSecureMe/vmc.git
+[submodule "vmc-docker"]
+	path = vmc-docker
+	url = git@github.com:DSecureMe/vmc-docker.git
+[submodule "vmc-demo"]
+	path = vmc-demo
+	url = git@github.com:DSecureMe/vmc-demo.git
