@@ -1,4 +1,4 @@
-FROM vmc-builder:latest
+FROM python:3.7-slim-bullseye
 
 COPY vmc/ /tmp/vmc/
 

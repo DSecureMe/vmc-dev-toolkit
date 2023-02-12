@@ -19,7 +19,6 @@ all:
 
 build:
 	@echo "Starting to build vmc"
-	cd vmc-docker && make build
 	docker build -t vmc_dev -f Dockerfile.vmc-dev .
 
 test:
@@ -50,7 +49,7 @@ endif
 prepare-dev:
 	rm -rf env
 	virtualenv $(VENV_PATH)
-	source $(VENV_PATH)/bin/activate && pip3 install --use-feature=2020-resolver -r vmc/requirements.txt -r vmc/test_requirements.txt
+	source $(VENV_PATH)/bin/activate && pip3 install -r vmc/requirements.txt -r vmc/test_requirements.txt
 
 migrations:
 	source $(VENV_PATH)/bin/activate && cd vmc/src/ && python3 -m vmc makemigrations --settings vmc.config.test_settings
