@@ -21,4 +21,4 @@ RUN apt-get update; \
 WORKDIR /
 
 RUN vmc collectstatic --noinput --clear;
-ENTRYPOINT ["/opt/venv/bin/vmcctl"]
+ENTRYPOINT ["vmcctl"]
