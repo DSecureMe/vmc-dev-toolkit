@@ -7,7 +7,7 @@ services:
       - start
       - admin
     volumes:
-      - ../../vmc/src/vmc:/opt/venv/lib/python3.7/site-packages/vmc
+      - ../../vmc/src/vmc:/usr/local/lib/python3.10/site-packages/vmc
       - ../../vmc-demo/config/vmc/:/test_data
       - ../../vmc-demo/config/vmc/demo.yml:/etc/vmc/config.yml
 
@@ -17,7 +17,7 @@ services:
       - start
       - worker
     volumes:
-      - ../../vmc/src/vmc:/opt/venv/lib/python3.7/site-packages/vmc
+      - ../../vmc/src/vmc:/usr/local/lib/python3.10/site-packages/vmc
       - ../../vmc-demo/config/vmc/demo.yml:/etc/vmc/config.yml
 
   scheduler:
@@ -26,7 +26,7 @@ services:
       - start
       - scheduler
     volumes:
-      - ../../vmc/src/vmc:/opt/venv/lib/python3.7/site-packages/vmc
+      - ../../vmc/src/vmc:/usr/local/lib/python3.10/site-packages/vmc
       - ../../vmc-demo/config/vmc/demo.yml:/etc/vmc/config.yml
 
   postgres:
