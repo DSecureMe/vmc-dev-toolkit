@@ -31,6 +31,7 @@ services:
       - ../../vmc-demo/config/vmc/demo.yml:/etc/vmc/config.yml
 
   nginx:
+    image: vmc_static_nginx_dev:latest
     volumes:
       - vmc-static:/usr/share/vmc/static:ro
 

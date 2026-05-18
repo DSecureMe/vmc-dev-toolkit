@@ -1,0 +1,5 @@
+FROM nginx:1.18.0
+
+COPY vmc-docker/docker/nginx/root/etc/nginx/nginx.conf /etc/nginx/nginx.conf
+
+EXPOSE 8080

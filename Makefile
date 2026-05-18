@@ -20,6 +20,7 @@ all:
 build:
 	@echo "Starting to build vmc"
 	docker build -t vmc_dev -f Dockerfile.vmc-dev .
+	docker build -t vmc_static_nginx_dev -f Dockerfile.vmc-static-nginx-dev .
 
 lint:
 	source $(VENV_PATH)/bin/activate && cd vmc && ruff check src/vmc
