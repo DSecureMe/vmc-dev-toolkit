@@ -25,7 +25,7 @@ lint:
 	source $(VENV_PATH)/bin/activate && cd vmc && ruff check src/vmc
 
 security:
-	source $(VENV_PATH)/bin/activate && cd vmc && bandit -r -ll -s B105,B605,B607,B106 src/vmc
+	source $(VENV_PATH)/bin/activate && cd vmc && bandit -r -ll -s B105,B106 src/vmc
 
 test: lint security
 ifdef tox
