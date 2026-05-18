@@ -10,6 +10,7 @@ services:
       - ../../vmc/src/vmc:/usr/local/lib/python3.10/site-packages/vmc
       - ../../vmc-demo/config/vmc/:/test_data
       - ../../vmc-demo/config/vmc/demo.yml:/etc/vmc/config.yml
+      - vmc-static:/usr/share/vmc/static
 
   worker:
     image: vmc_dev:latest
@@ -29,6 +30,13 @@ services:
       - ../../vmc/src/vmc:/usr/local/lib/python3.10/site-packages/vmc
       - ../../vmc-demo/config/vmc/demo.yml:/etc/vmc/config.yml
 
+  nginx:
+    volumes:
+      - vmc-static:/usr/share/vmc/static:ro
+
   postgres:
     ports:
     - "5432:5432"
+
+volumes:
+  vmc-static:
