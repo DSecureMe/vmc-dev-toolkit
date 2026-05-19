@@ -1,4 +1,18 @@
 # vmc-dev-toolkit
+
+> [!WARNING]
+> **This software is NOT a release candidate and is NOT production-ready.**
+>
+> The code in this repository (and its dependencies) may contain
+> vulnerabilities. The maintainers provide no warranty of any kind and
+> accept no liability for any defect, vulnerability, data loss, security
+> incident or other damage resulting from its use.
+>
+> You install, run, evaluate and operate this software **at your own
+> risk**. Do not deploy it in a production environment, and do not
+> expose it to untrusted networks without an independent security
+> review.
+
 VMC Developer Toolkit - **[VMC](https://github.com/DSecureMe/vmc)** (OWASP Vulnerability Management Center) is a platform designed to make vulnerability governance easier for any security specialists and SOC teams within their organisations. VMC is a great partner in any vulnerability management process, allowing automation and making your life easier. You can integrate VMC with vulnerability scanners and platforms like [TheHive](https://github.com/TheHive-Project/TheHive). Additionally, VMC takes care of asset management integrating with [Ralph](https://github.com/allegro/ralph), whole vulnerability reporting and dashboards ([Kibana](https://github.com/elastic/kibana)) for the clear overview. VMC allows you to focus on the most important vulnerability issues within your environment.
 
 ## First Steps
